@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.convert.MongoConverter;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @EnableMongock
@@ -40,6 +43,10 @@ public class Mongock4Spring5SpringData3App {
 
     public @Bean MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongoClient(), "my-database");
+    }
+    @Bean
+    public GridFsTemplate gridFsTemplate(MongoDatabaseFactory mongoDatabaseFactory, MongoConverter mongoConverter) {
+        return new GridFsTemplate(mongoDatabaseFactory, mongoConverter);
     }
 
 
