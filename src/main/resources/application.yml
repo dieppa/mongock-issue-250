@@ -1,0 +1,14 @@
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.issue_250.client.changelogs
+  transaction-enabled: false
+
+
+
+
+
+
+
+
+
+
