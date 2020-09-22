@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @AutoConfigureMockMvc
 public class ClientRepositoryIntegrationTest extends MongockIssue250ApplicationTest {
 
-    @Autowired
+
     private ClientRepository clientRepository;
 
 //    @MockBean
