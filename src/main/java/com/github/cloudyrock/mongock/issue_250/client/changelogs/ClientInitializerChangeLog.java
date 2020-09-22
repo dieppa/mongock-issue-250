@@ -3,7 +3,7 @@ package com.github.cloudyrock.mongock.issue_250.client.changelogs;
 import com.github.cloudyrock.mongock.ChangeLog;
 import com.github.cloudyrock.mongock.ChangeSet;
 import com.github.cloudyrock.mongock.issue_250.client.Client;
-import com.github.cloudyrock.mongock.issue_250.client.ClientRepository;
+import com.github.cloudyrock.mongock.issue_250.client.repo.ClientRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,9 +18,9 @@ public class ClientInitializerChangeLog {
     public void dataInitializer(ClientRepository clientRepository) {
 
         java.lang.reflect.Proxy.getInvocationHandler(clientRepository);
-        List<Client> clients = IntStream.range(0, INITIAL_CLIENTS)
+        IntStream.range(0, INITIAL_CLIENTS)
                 .mapToObj(i -> new Client("name-" + i, "email-" + i, "phone" + i, "country" + i))
-                .collect(Collectors.toList());
-        List<Client> result = clientRepository.saveAll(clients);
+                .collect(Collectors.toList())
+                .forEach(clientRepository::save);
     }
 }

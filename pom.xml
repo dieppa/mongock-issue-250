@@ -17,9 +17,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <junit.version>4.13</junit.version>
-        <junit.jupiter.version>5.6.2</junit.jupiter.version>
-        <junit.vintage.version>5.6.2</junit.vintage.version>
         <java.version>1.8</java.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>

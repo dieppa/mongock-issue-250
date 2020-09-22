@@ -6,11 +6,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@DataMongoTest
-@ExtendWith(SpringExtension.class)
+//@DataMongoTest
+//@ExtendWith(SpringExtension.class)
 public class MongoDbSpringIntegrationTest {
-    @DisplayName("Mongock issue 250 test")
-    @Test
+//    @DisplayName("Mongock issue 250 test")
+//    @Test
     public void test() {
     }
 }
